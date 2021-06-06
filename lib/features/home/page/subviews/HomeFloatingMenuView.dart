@@ -6,10 +6,9 @@ class HomeFloatingMenuView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        margin: EdgeInsets.all(16),
+        margin: const EdgeInsets.only(left: 16, right: 16, top: 16),
         color: Colors.white,
-        shadowColor: Colors.white12,
-        elevation: 8,
+        elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8)
         ),

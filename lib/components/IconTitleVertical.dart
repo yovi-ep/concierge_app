@@ -30,7 +30,7 @@ class IconTitleVertical extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 11,
-                        color: AssetColors.fontColorPrimary
+                        color: AssetColors.fontColorSecondary
                       ),
                     ),
                   ],

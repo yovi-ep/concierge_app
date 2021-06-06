@@ -16,5 +16,6 @@ extension AssetColors on Colors {
   };
   static const MaterialColor primaryColor =  MaterialColor(0xFF3AA8E7, AssetColors._primaryColor);
   
-  static const Color fontColorPrimary = Color(0xFF828282);
+  static const Color fontColorPrimary = Color(0xFF333333);
+  static const Color fontColorSecondary = Color(0xFF828282);
 }
