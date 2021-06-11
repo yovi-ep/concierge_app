@@ -14,19 +14,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-          child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  HomeHeaderView(),
-                  HomeFloatingMenuView(),
-                  SizedBox(height: 24),
-                  HomeNewsView(),
-                  HomeEventView()
-                ],
-              )
-          ),
-        )
+      body: SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              children: [
+                HomeHeaderView(),
+                HomeFloatingMenuView(),
+                SizedBox(height: 24),
+                HomeNewsView(),
+                HomeEventView()
+              ],
+            ),
+          )
+      ),
     );
   }
 }

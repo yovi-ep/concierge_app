@@ -6,7 +6,7 @@ class HomeHeaderView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
         aspectRatio: 2 / 1.2,
-        child:  Container(
+        child: Container(
             color: AssetColors.primaryColor,
             child: SafeArea(
               child: Stack(
@@ -20,6 +20,6 @@ class HomeHeaderView extends StatelessWidget {
               ),
             )
         )
-    ); // Header Background,
+    );
   }
 }
