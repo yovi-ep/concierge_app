@@ -1,3 +1,4 @@
+import 'package:concierge/features/concierge/page/ConciergePage.dart';
 import 'package:concierge/style/AssetColors.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         accentColor: AssetColors.primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity
       ),
-      home: HomePage(),
+      home: ConciergePage(),
     );
   }
 }

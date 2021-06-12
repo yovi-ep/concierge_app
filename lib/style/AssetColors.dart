@@ -18,4 +18,6 @@ extension AssetColors on Colors {
   
   static const Color fontColorPrimary = Color(0xFF333333);
   static const Color fontColorSecondary = Color(0xFF828282);
+
+  static const Color blackTransparent = Color(0x70000000);
 }
