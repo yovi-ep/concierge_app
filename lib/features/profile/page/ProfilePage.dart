@@ -61,89 +61,98 @@ class _ProfilePageState extends State<ProfilePage> {
             padding: EdgeInsets.all(16),
             child: Column(
               children: [
-                Container(
-                  width: 150,
-                  height: 150,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: AssetImage("assets/images/yoviep.jpeg"),
-                          fit: BoxFit.fill
+                Expanded(child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 150,
+                        height: 150,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image: AssetImage("assets/images/yoviep.jpeg"),
+                                fit: BoxFit.fill
+                            ),
+                            border: Border.all(color: Colors.white, width: 4)
+                        ),
                       ),
-                      border: Border.all(color: Colors.white, width: 4)
+
+                      SizedBox(height: 32),
+
+                      TextFormField(
+                        controller: this._inName,
+                        style: TextStyle(
+                            color: Colors.white
+                        ),
+                        decoration: InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white)
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white)
+                            ),
+                            hintText: 'Write your name here...',
+                            labelText: 'Name',
+                            labelStyle: TextStyle(
+                                color: Colors.white
+                            ),
+                            hintStyle: TextStyle(
+                                color: Colors.white.withAlpha(100)
+                            )
+                        ),
+                      ),
+
+                      SizedBox(height: 16),
+
+                      TextFormField(
+                        controller: this._inContact,
+                        style: TextStyle(
+                            color: Colors.white
+                        ),
+                        decoration: InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white)
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white)
+                            ),
+                            hintText: 'Write your contact here...',
+                            labelText: 'Contact',
+                            labelStyle: TextStyle(
+                                color: Colors.white
+                            ),
+                            hintStyle: TextStyle(
+                                color: Colors.white.withAlpha(100)
+                            )
+                        ),
+                      ),
+                    ],
                   ),
-                ),
+                )),
 
-                SizedBox(height: 32),
-
-                TextFormField(
-                  controller: this._inName,
-                  style: TextStyle(
-                      color: Colors.white
-                  ),
-                  decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)
-                      ),
-                      hintText: 'Write your name here...',
-                      labelText: 'Name',
-                      labelStyle: TextStyle(
-                          color: Colors.white
-                      ),
-                      hintStyle: TextStyle(
-                          color: Colors.white.withAlpha(100)
-                      )
-                  ),
-                ),
-
-                SizedBox(height: 16),
-
-                TextFormField(
-                  controller: this._inContact,
-                  style: TextStyle(
-                      color: Colors.white
-                  ),
-                  decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)
-                      ),
-                      hintText: 'Write your contact here...',
-                      labelText: 'Contact',
-                      labelStyle: TextStyle(
-                          color: Colors.white
-                      ),
-                      hintStyle: TextStyle(
-                          color: Colors.white.withAlpha(100)
-                      )
-                  ),
-                ),
-
-                Expanded(child: Container()),
-
-                TextButton(
-                  onPressed: () {
-                    _viewModel.update(
-                        this._inName.value.text,
-                        this._inContact.value.text
-                    ).then((value) {
-                      if (value) {
-                        Toast(context: context, message: "Update profile successfully, please restart");
-                      } else {
-                        Toast(context: context, message: "Update profile successfully failed");
-                      }
-                    });
-                  },
-                  child: Text(
-                    "Update",
-                    style: TextStyle(color: Colors.white),
-                  )
+                Positioned(
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    child: TextButton(
+                        onPressed: () {
+                          _viewModel.update(
+                              this._inName.value.text,
+                              this._inContact.value.text
+                          ).then((value) {
+                            if (value) {
+                              Toast(context: context, message: "Update profile successfully, please restart");
+                            } else {
+                              Toast(context: context, message: "Update profile successfully failed");
+                            }
+                          });
+                        },
+                        child: Text(
+                          "Update",
+                          style: TextStyle(color: Colors.white),
+                        )
+                    )
                 )
               ],
             ),

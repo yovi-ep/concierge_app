@@ -12,7 +12,7 @@ class HomeHeaderView extends StatefulWidget {
 
 class _HomeHeaderState extends State<HomeHeaderView> {
   late ProfileViewModel _profileViewModel;
-  String _name = "";
+  String _name = "Yovi Eka Putra";
 
   @override
   void initState() {
