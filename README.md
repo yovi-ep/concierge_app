@@ -16,5 +16,4 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ## Documentation
-![Capture](/documentations/video.gif)
-<img src="/documentations/video.gif" height="100">
+<img src="/documentations/video.gif" width="30%">
