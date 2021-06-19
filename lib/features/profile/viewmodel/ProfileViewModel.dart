@@ -5,26 +5,32 @@ class ProfileViewModel {
   String _keyName = "developer_name";
   String _keyContact = "developer_contact";
 
-  update(String name, String contact) async {
+  Future<bool> update(String name, String contact) async {
     final SharedPreferences pref = await this._prefs;
-    pref.setString(this._keyName, name).then((success) {
-      print(success);
+    bool nameSuccess = await pref.setString(this._keyName, name).then((success) {
+      return success;
     });
 
-    pref.setString(this._keyContact, contact).then((success) {
-      print(success);
+    bool contactSuccess = await pref.setString(this._keyContact, contact).then((success) {
+      return success;
     });
+
+    return nameSuccess && contactSuccess;
   }
 
   Future<String> getDeveloperName() async {
     return _prefs.then((pref) {
-      return pref.getString(this._keyName) ?? "Yovi Eka Putra";
+      var name = pref.getString(this._keyName);
+      name = name == null || name.isEmpty == true ? "Yovi Eka Putra" : name;
+      return name;
     });
   }
 
   Future<String> getDeveloperContact() async {
     return _prefs.then((pref) {
-      return pref.getString(this._keyContact) ?? "https://github.com/yovi-ep";
+      var contact = pref.getString(this._keyContact);
+      contact = contact == null || contact.isEmpty == true ? "https://github.com/yovi-ep" : contact;
+      return contact;
     });
   }
 }

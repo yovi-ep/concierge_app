@@ -1,3 +1,4 @@
+import 'package:concierge/Utils/GlobalFunction.dart';
 import 'package:concierge/Utils/Navigator.dart';
 import 'package:concierge/features/profile/viewmodel/ProfileViewModel.dart';
 import 'package:concierge/style/AssetColors.dart';
@@ -131,7 +132,13 @@ class _ProfilePageState extends State<ProfilePage> {
                     _viewModel.update(
                         this._inName.value.text,
                         this._inContact.value.text
-                    );
+                    ).then((value) {
+                      if (value) {
+                        Toast(context: context, message: "Update profile successfully, please restart");
+                      } else {
+                        Toast(context: context, message: "Update profile successfully failed");
+                      }
+                    });
                   },
                   child: Text(
                     "Update",
