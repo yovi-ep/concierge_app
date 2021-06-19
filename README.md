@@ -16,4 +16,4 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ## Documentation
-![alt text](/documentations/video.gif)
+![alt text](/documentations/video.gif | height=150)
