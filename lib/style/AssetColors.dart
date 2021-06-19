@@ -26,7 +26,7 @@ extension AssetColors on Colors {
   static const Color containerFilter = Color(0x1056CCF2);
   static const Color buttonFilter = Color(0xFF219653);
 
-  static const Color statusOndueColor = Color(0xFFF2994A);
+  static const Color statusOnDueColor = Color(0xFFF2994A);
   static const Color statusOverdueColor = Color(0xFFEB5757);
-  static const Color statusComplatedColor = Color(0xFF2D9CDB);
+  static const Color statusCompletedColor = Color(0xFF2D9CDB);
 }

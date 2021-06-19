@@ -3,6 +3,7 @@ import 'package:concierge/Utils/Navigator.dart';
 import 'package:concierge/components/IconTitleVertical.dart';
 import 'package:concierge/features/bill/page/BillPage.dart';
 import 'package:concierge/features/concierge/page/ConciergePage.dart';
+import 'package:concierge/features/profile/page/ProfilePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class HomeFloatingMenuView extends StatelessWidget {
                 IconTitleVertical("Concierge", "assets/images/concierge.png", () => this._navigator(context, 1)),
                 IconTitleVertical("Smart Home", "assets/images/smart_home.png", () => this._navigator(context, 2)),
                 IconTitleVertical("My Bill", "assets/images/bill.png", () => this._navigator(context, 3)),
-                IconTitleVertical("My Profile", "assets/images/my_card.png", () => this._navigator(context, 4)),
+                IconTitleVertical("My Profile", "assets/images/my_profile.png", () => this._navigator(context, 4)),
               ]
           ),
         )
@@ -43,7 +44,7 @@ class HomeFloatingMenuView extends StatelessWidget {
         Navigation.push(context, BillPage());
         break;
       case 4:
-        Navigation.push(context, ConciergePage());
+        Navigation.push(context, ProfilePage());
         break;
     }
   }
